@@ -1,0 +1,7 @@
+
+# Enable Rewrite Mod
+RewriteEngine On
+# Rewrite Condition for USER AGENT BOTS
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|googlebot)
+# Rewrite Rules to redirect bots to our SSR Page.
+RewriteRule blog/(.*)$ https://www.ashiish.me/ssr/post.php?slug=$1 [R=301,L]
